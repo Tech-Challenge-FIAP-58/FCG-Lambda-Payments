@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="FCG.Lambda.Payments.Core/FCG.Lambda.Payments.Core.csproj" Id="2b1a5068-2900-4536-9f09-8b079586a373" />
+  <Project Path="FCG.Lambda.Payments.FakePaymentProvider/FCG.Lambda.Payments.FakePaymentProvider.csproj" Id="a71d6cb5-ba08-46fd-a65a-975c3aede6d4" />
+  <Project Path="FCG.Lambda.Payments/FCG.Lambda.Payments.csproj" />
+</Solution>

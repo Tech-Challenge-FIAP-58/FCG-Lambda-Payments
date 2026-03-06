@@ -1,0 +1,11 @@
+C:\Users\gilma\source\repos\FIAP_FASE3_PEDRETTI_LAMBDA\FCG.Lambda.Payments\FCG.Lambda.Payments\FCG.Lambda.Payments.FakePaymentProvider\bin\Debug\net8.0\FCG.Lambda.Payments.FakePaymentProvider.deps.json
+C:\Users\gilma\source\repos\FIAP_FASE3_PEDRETTI_LAMBDA\FCG.Lambda.Payments\FCG.Lambda.Payments\FCG.Lambda.Payments.FakePaymentProvider\bin\Debug\net8.0\FCG.Lambda.Payments.FakePaymentProvider.dll
+C:\Users\gilma\source\repos\FIAP_FASE3_PEDRETTI_LAMBDA\FCG.Lambda.Payments\FCG.Lambda.Payments\FCG.Lambda.Payments.FakePaymentProvider\bin\Debug\net8.0\FCG.Lambda.Payments.FakePaymentProvider.pdb
+C:\Users\gilma\source\repos\FIAP_FASE3_PEDRETTI_LAMBDA\FCG.Lambda.Payments\FCG.Lambda.Payments\FCG.Lambda.Payments.FakePaymentProvider\obj\Debug\net8.0\FCG.Lambda.Payments.FakePaymentProvider.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gilma\source\repos\FIAP_FASE3_PEDRETTI_LAMBDA\FCG.Lambda.Payments\FCG.Lambda.Payments\FCG.Lambda.Payments.FakePaymentProvider\obj\Debug\net8.0\FCG.Lambda.Payments.FakePaymentProvider.AssemblyInfoInputs.cache
+C:\Users\gilma\source\repos\FIAP_FASE3_PEDRETTI_LAMBDA\FCG.Lambda.Payments\FCG.Lambda.Payments\FCG.Lambda.Payments.FakePaymentProvider\obj\Debug\net8.0\FCG.Lambda.Payments.FakePaymentProvider.AssemblyInfo.cs
+C:\Users\gilma\source\repos\FIAP_FASE3_PEDRETTI_LAMBDA\FCG.Lambda.Payments\FCG.Lambda.Payments\FCG.Lambda.Payments.FakePaymentProvider\obj\Debug\net8.0\FCG.Lambda.Payments.FakePaymentProvider.csproj.CoreCompileInputs.cache
+C:\Users\gilma\source\repos\FIAP_FASE3_PEDRETTI_LAMBDA\FCG.Lambda.Payments\FCG.Lambda.Payments\FCG.Lambda.Payments.FakePaymentProvider\obj\Debug\net8.0\FCG.Lambda.Payments.FakePaymentProvider.dll
+C:\Users\gilma\source\repos\FIAP_FASE3_PEDRETTI_LAMBDA\FCG.Lambda.Payments\FCG.Lambda.Payments\FCG.Lambda.Payments.FakePaymentProvider\obj\Debug\net8.0\refint\FCG.Lambda.Payments.FakePaymentProvider.dll
+C:\Users\gilma\source\repos\FIAP_FASE3_PEDRETTI_LAMBDA\FCG.Lambda.Payments\FCG.Lambda.Payments\FCG.Lambda.Payments.FakePaymentProvider\obj\Debug\net8.0\FCG.Lambda.Payments.FakePaymentProvider.pdb
+C:\Users\gilma\source\repos\FIAP_FASE3_PEDRETTI_LAMBDA\FCG.Lambda.Payments\FCG.Lambda.Payments\FCG.Lambda.Payments.FakePaymentProvider\obj\Debug\net8.0\ref\FCG.Lambda.Payments.FakePaymentProvider.dll
