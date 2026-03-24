@@ -32,7 +32,7 @@ namespace FCG.Lambda.Payments;
   "Amount": 3.99,
   "CardName": "Cardname Blah",
   "CardNumber": "123456789",
-  "ExpirationDate": "02/2027",
+  "ExpirationDate": "02/2027",C
   "Cvv": "123"
  }
  */

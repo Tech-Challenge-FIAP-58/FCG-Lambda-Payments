@@ -1,49 +1,55 @@
-# AWS Lambda Empty Function Project
+# FCG Lambda Payments
 
-This starter project consists of:
-* Function.cs - class file containing a class with a single function handler method
-* aws-lambda-tools-defaults.json - default argument settings for use with Visual Studio and command line deployment tools for AWS
+Função AWS Lambda para processamento de pagamentos com cartão de crédito, usando .NET 8.
 
-You may also have a test project depending on the options selected.
+## Visão geral
 
-The generated function handler is a simple method accepting a string argument that returns the uppercase equivalent of the input string. Replace the body of this method, and parameters, to suit your needs. 
+Este projeto recebe uma requisição HTTP (via API Gateway/Kong), transforma o payload em um evento de pedido (`OrderPlacedEvent`), processa o pagamento via fachada (`CreditCardPaymentFacade`) e retorna os dados da transação.
 
-## Here are some steps to follow from Visual Studio:
+## Estrutura da solução
 
-To deploy your function to AWS Lambda, right click the project in Solution Explorer and select *Publish to AWS Lambda*.
+- `FCG.Lambda.Payments`: projeto principal da Lambda.
+- `FCG.Lambda.Payments.Core`: contratos de integração (eventos).
+- `FCG.Lambda.Payments.FakePaymentProvider`: provedor fake para simular autorização/captura.
 
-To view your deployed function open its Function View window by double-clicking the function name shown beneath the AWS Lambda node in the AWS Explorer tree.
+## Fluxo de processamento
 
-To perform testing against your deployed function use the Test Invoke tab in the opened Function View window.
+1. Uma requisição chega na Lambda (`FunctionHandler`) com o JSON do pedido.
+2. O corpo é desserializado para `OrderPlacedEvent`.
+3. A função monta a entidade de domínio `Payment` com os dados do cartão (`CreditCard`).
+4. A função instancia `PaymentConfig` com chaves padrão (mock) e cria a `CreditCardPaymentFacade`.
+5. A fachada:
+   - cria `FakePaymentService`;
+   - gera `CardHash`;
+   - cria `TransactionFake`;
+   - chama `AuthorizeCardTransaction()`.
+6. O resultado fake é mapeado para a entidade de domínio `Transaction`.
+7. A Lambda retorna `200` com o JSON da transação.
+8. Em caso de erro, retorna `500` com mensagem e stack trace.
 
-To configure event sources for your deployed function, for example to have your function invoked when an object is created in an Amazon S3 bucket, use the Event Sources tab in the opened Function View window.
+## Exemplo de payload
 
-To update the runtime configuration of your deployed function use the Configuration tab in the opened Function View window.
-
-To view execution logs of invocations of your function use the Logs tab in the opened Function View window.
-
-## Here are some steps to follow to get started from the command line:
-
-Once you have edited your template and code you can deploy your application using the [Amazon.Lambda.Tools Global Tool](https://github.com/aws/aws-extensions-for-dotnet-cli#aws-lambda-amazonlambdatools) from the command line.
-
-Install Amazon.Lambda.Tools Global Tools if not already installed.
+```json
+{
+  "ClientId": 11,
+  "OrderId": "7f3c2c5a-6d3b-4c1e-9a6f-1c2b3d4e5f60",
+  "PaymentMethod": 1,
+  "Amount": 3.99,
+  "CardName": "Cardname Blah",
+  "CardNumber": "123456789",
+  "ExpirationDate": "02/2027",
+  "Cvv": "123"
+}
 ```
-    dotnet tool install -g Amazon.Lambda.Tools
-```
 
-If already installed check if new version is available.
-```
-    dotnet tool update -g Amazon.Lambda.Tools
-```
+## Endpoint
 
-Execute unit tests
-```
-    cd "FCG.Lambda.Payments/test/FCG.Lambda.Payments.Tests"
-    dotnet test
-```
+- AWS API Gateway: `https://unb1zq8jj5.execute-api.us-east-2.amazonaws.com/default/FCGPayments`
+- Kong local: `http://localhost:8000/payments`
 
-Deploy function to AWS Lambda
-```
-    cd "FCG.Lambda.Payments/src/FCG.Lambda.Payments"
-    dotnet lambda deploy-function
-```
+## Observações
+
+- O provedor de pagamento é **fake** e possui comportamento simulado.
+- A autorização no fake provider pode variar (aprovado/recusado).
+- O handler configurado para deploy está em `aws-lambda-tools-defaults.json`:
+  - `FCG.Lambda.Payments::FCG.Lambda.Payments.Function::FunctionHandler`

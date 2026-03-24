@@ -1,0 +1,42 @@
+# Build outputs
+**/[Bb]in/
+**/[Oo]bj/
+**/[Dd]ebug/
+**/[Rr]elease/
+**/TestResults/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio
+.vs/
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+# NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+
+# .NET tools
+.dotnet/
+
+# Logs
+*.log
+
+# OS files
+[Dd]esktop.ini
+[Tt]humbs.db
+
+# AWS Lambda artifacts
+*.zip
+
+# Generated files
+*.cache
+*.tmp
